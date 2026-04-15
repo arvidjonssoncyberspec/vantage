@@ -54,11 +54,11 @@ cd vantage
 python vantage.py
 ```
 
-> Some checks require elevated privileges to read certain system values.
-> It is recommended to run Vantage as Administrator for full results.
+> Vantage does not require administrator privileges to run.
+> All checks work as a standard user.
 >
-> Right-click your terminal and select "Run as administrator", then navigate
-> to the project folder and run the command above.
+> Note: the fix commands shown in the terminal (e.g. disabling accounts
+> or blocking ports) do require an administrator terminal to execute.
 
 ---
 
@@ -90,8 +90,10 @@ The report includes the result, severity, and fix instructions for every check.
 ## Important notes
 
 - Vantage is **read-only**. It will never make changes to your system.
+- Vantage does not require administrator privileges to run.
 - Fix instructions are suggestions. Research before applying changes,
   especially when disabling services or blocking ports.
+- Fix commands shown in the terminal require an administrator terminal to execute.
 - Some checks (e.g. Windows Updates) may take a few seconds to complete.
 
 ---
