@@ -1,6 +1,6 @@
 import os
 import sys
-from checks import firewall, defender, uac, password_policy, guest_account
+from checks import firewall, defender, uac, password_policy, guest_account, admin_account
 from report import generate_report
 
 def clear():
@@ -35,6 +35,7 @@ def main():
     results.append(uac.run(wait))
     results.append(password_policy.run(wait))
     results.append(guest_account.run(wait))
+    results.append(admin_account.run(wait))
 
     # --- Generate report ---
     generate_report(results)

@@ -11,6 +11,10 @@ def run(wait):
         winreg.CloseKey(key)
     except OSError:
         print("\n  [FAIL] Could not read UAC registry key.")
+        print("\n  How to fix:")
+        print("  > Start menu > search 'UAC'")
+        print("  > 'Change User Account Control settings'")
+        print("  > Slider should be at least one notch above 'Never notify'")
         wait()
         return {
             "title"   : "3. UAC (User Account Control)",
@@ -29,6 +33,12 @@ def run(wait):
 
     if value == 0:
         print("\n  [FAIL] UAC is completely disabled.")
+        print("\n  How to fix:")
+        print("  > Start menu > search 'UAC'")
+        print("  > 'Change User Account Control settings'")
+        print("  > Move the slider to 'Notify me only when apps try to make changes'")
+        print("  > Click OK and restart if prompted")
+        print("  > Or run: UserAccountControlSettings.exe")
         wait()
         return {
             "title"   : "3. UAC (User Account Control)",

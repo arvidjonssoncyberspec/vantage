@@ -42,6 +42,11 @@ def run(wait):
         }
     else:
         print("\n  [FAIL] One or more firewall profiles are turned off.")
+        print("\n  How to fix:")
+        print("  > Start menu > 'Windows Defender Firewall'")
+        print("  > Turn Windows Defender Firewall on or off")
+        print("  > Enable for Domain, Private, and Public > OK")
+        print("  > Or run (as admin): netsh advfirewall set allprofiles state on")
         wait()
         return {
             "title"   : "1. Windows Firewall Status",

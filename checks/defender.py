@@ -22,6 +22,10 @@ def run(wait):
     if not output:
         # No antivirus product found at all
         print("\n  [FAIL] No antivirus product detected.")
+        print("\n  How to fix:")
+        print("  > Start menu > search 'Windows Security'")
+        print("  > Virus & threat protection > Manage settings")
+        print("  > Turn on Real-time protection")
         wait()
         return {
             "title"   : "2. Windows Defender / Antivirus Status",
@@ -69,6 +73,12 @@ def run(wait):
         }
     else:
         print("\n  [FAIL] Antivirus is installed but not active.")
+        print("\n  How to fix:")
+        print("  > For Windows Defender:")
+        print("    Start menu > 'Windows Security' > Virus & threat protection")
+        print("    > Manage settings > Turn on Real-time protection")
+        print("  > For third-party AV (e.g. AVG, Avast):")
+        print("    Open the program and look for 'Enable protection' or 'Turn on'")
         wait()
         return {
             "title"   : "2. Windows Defender / Antivirus Status",
