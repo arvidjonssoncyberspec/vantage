@@ -1,5 +1,5 @@
 import os
-from checks import firewall, defender, uac, password_policy, guest_account, admin_account, open_ports
+from checks import firewall, defender, uac, password_policy, guest_account, admin_account, open_ports, services, startup, updates
 from report import generate_report
 
 def clear():
@@ -36,6 +36,9 @@ def main():
     results.append(guest_account.run(wait))
     results.append(admin_account.run(wait))
     results.append(open_ports.run(wait))
+    results.append(services.run(wait))
+    results.append(startup.run(wait))
+    results.append(updates.run(wait))
 
     # --- Generate report ---
     generate_report(results)
