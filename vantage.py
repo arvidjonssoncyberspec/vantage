@@ -1,6 +1,6 @@
 import os
 import sys
-from checks import firewall
+from checks import firewall, defender
 from report import generate_report
 
 def clear():
@@ -23,6 +23,7 @@ def main():
 
     # --- Run checks ---
     results.append(firewall.run(wait))
+    results.append(defender.run(wait))
 
     # --- Generate report ---
     generate_report(results)

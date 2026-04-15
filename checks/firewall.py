@@ -49,13 +49,12 @@ def run(wait):
             "severity": "High",
             "detail"  : detail,
             "fix"     : (
-                "Turn on all firewall profiles:\n"
-                "  1. Open the Start menu and search for 'Windows Defender Firewall'\n"
-                "  2. Click 'Turn Windows Defender Firewall on or off'\n"
-                "  3. Enable it for all three profiles: Domain, Private, and Public\n"
-                "  4. Click OK\n"
+                "One or more firewall profiles are off. To fix:\n"
+                "  Start menu > 'Windows Defender Firewall'\n"
+                "  > Turn Windows Defender Firewall on or off\n"
+                "  > Enable for Domain, Private, and Public > OK\n"
                 "\n"
-                "Or via command line (run as Administrator):\n"
+                "Or run this in an Administrator terminal:\n"
                 "  netsh advfirewall set allprofiles state on"
             )
         }
