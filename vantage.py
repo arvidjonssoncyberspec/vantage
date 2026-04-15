@@ -1,6 +1,6 @@
 import os
 import sys
-from checks import firewall, defender, uac, password_policy
+from checks import firewall, defender, uac, password_policy, guest_account
 from report import generate_report
 
 def clear():
@@ -9,9 +9,17 @@ def clear():
 def wait():
     input("\nPress Enter to continue...")
 
+LOGO = r"""
+__   __   _     _  _   _____   _      ___    ___
+\ \ / /  /_\   | \| | |_   _| /_\    / __|  | __|
+ \ V /  / _ \  | .` |   | |  / _ \  | (_ |  | _|
+  \_/  /_/ \_\ |_|\_|   |_| /_/ \_\  \___|  |___|
+"""
+
 def main():
     clear()
     print("=" * 60)
+    print(LOGO)
     print("  VANTAGE — Windows Security Hardening Auditor")
     print("=" * 60)
     print("\nThis tool will scan your system for common security")
@@ -26,6 +34,7 @@ def main():
     results.append(defender.run(wait))
     results.append(uac.run(wait))
     results.append(password_policy.run(wait))
+    results.append(guest_account.run(wait))
 
     # --- Generate report ---
     generate_report(results)
